@@ -29,7 +29,7 @@
   <actions>
     <!-- Add your actions here -->
     <action id="Scalagen.RunScalagen" class="ScalagenClass" text="Scalagen" description="Scalagen">
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl K" second-keystroke="ctrl J"/>
     </action>
   </actions>
