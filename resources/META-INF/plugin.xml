@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.github.feiwongreed</id>
   <name>Scalagen, Java to Scala converter</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor email="swinepeter@gmail.com" url="https://github.com/FeiWongReed/idea-scalagen">FeiWongReed</vendor>
 
   <description><![CDATA[
