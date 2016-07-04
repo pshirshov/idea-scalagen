@@ -1,3 +1,5 @@
+package com.github.pshirshov;
+
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.scratch.ScratchFileService;
 import com.intellij.ide.scratch.ScratchRootType;

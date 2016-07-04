@@ -1,8 +1,8 @@
 <idea-plugin version="2">
   <id>org.github.feiwongreed</id>
   <name>Scalagen, Java to Scala converter</name>
-  <version>1.0.2</version>
-  <vendor email="swinepeter@gmail.com" url="https://github.com/FeiWongReed/idea-scalagen">FeiWongReed</vendor>
+  <version>1.0.3</version>
+  <vendor email="pshirshov@gmail.com" url="https://github.com/pshirshov/idea-scalagen">pshirshov</vendor>
 
   <description><![CDATA[
       <p>This plugin allows you to convert Java code in current editor into Scala.</p>
@@ -36,18 +36,18 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="Scalagen.RunScalagen" class="ScalagenClass" text="Convert Java to Scala" description="Convert current selection or document into Scala with Scalagen">
+    <action id="Scalagen.RunScalagen" class="com.github.pshirshov.ScalagenClass" text="Convert Java to Scala" description="Convert current selection or document into Scala with Scalagen">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl K" second-keystroke="ctrl J"/>
     </action>
 
-    <action id="OpenScalaScratch" class="OpenScalaScratchAction" text="New Scala Scratch"
+    <action id="OpenScalaScratch" class="com.github.pshirshov.OpenScalaScratchAction" text="New Scala Scratch"
             description="Opens new Scala scratch file">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl K" second-keystroke="ctrl S"/>
     </action>
 
-    <action id="OpenJavaScratchAction" class="OpenJavaScratchAction" text="New Java Scratch"
+    <action id="com.github.pshirshov.OpenJavaScratchAction" class="com.github.pshirshov.OpenJavaScratchAction" text="New Java Scratch"
             description="Opens new Java scratch file">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl K" second-keystroke="ctrl N"/>
