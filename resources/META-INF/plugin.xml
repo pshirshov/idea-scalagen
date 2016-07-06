@@ -1,11 +1,15 @@
 <idea-plugin version="2">
   <id>org.github.feiwongreed</id>
   <name>Scalagen, Java to Scala converter</name>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
   <vendor email="pshirshov@gmail.com" url="https://github.com/pshirshov/idea-scalagen">pshirshov</vendor>
 
   <description><![CDATA[
-      <p>This plugin allows you to convert Java code in current editor into Scala.</p>
+      <p>
+        This plugin allows you to convert Java code into Scala.
+        Selection in current editor will be converted if any and the whole document if nothing is selected.
+      </p>
+
       <ul>
         <li>Default shortcut is <em>Ctrl+K, Ctrl+G</em></li>
         <li>Supports quick opening of Scala scrathes (default shortcut is <em>Ctrl+K, Ctrl+S</em>)

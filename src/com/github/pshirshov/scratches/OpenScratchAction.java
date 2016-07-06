@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.PathUtil;
 import kotlin.text.Charsets;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.net.URI;
 import java.nio.file.FileSystem;
@@ -20,6 +21,23 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 
 public abstract class OpenScratchAction extends AnAction {
+    private static final Path CLASS_JAR = Paths.get(PathUtil.getJarPathForClass(OpenScratchAction.class));
+    @Nullable
+    private static final FileSystem JAR_FS;
+
+    static {
+        try {
+            URI uri = new URI("jar", CLASS_JAR.toUri().toString(), null);
+            if (CLASS_JAR.toFile().isDirectory()) {
+                JAR_FS = null;
+            } else {
+                JAR_FS = FileSystems.newFileSystem(uri, new HashMap<>());
+            }
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Override
     public void actionPerformed(AnActionEvent e) {
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
@@ -34,15 +52,13 @@ public abstract class OpenScratchAction extends AnAction {
     protected String getDefaultSnippet() {
         String snippet;
         try {
-            final Path path = Paths.get(PathUtil.getJarPathForClass(getClass()));
             final Path snippetPath;
 
-            if (path.toFile().isDirectory()) {
-                snippetPath = path.resolve(getDefaultSnippetName());
+            if (CLASS_JAR.toFile().isDirectory()) {
+                snippetPath = CLASS_JAR.resolve(getDefaultSnippetName());
             } else {
-                URI uri = new URI("jar", path.toUri().toString(), null);
-                FileSystem fileSystem = FileSystems.newFileSystem(uri, new HashMap<>());
-                snippetPath = fileSystem.getPath(getDefaultSnippetName());
+                assert JAR_FS != null;
+                snippetPath = JAR_FS.getPath(getDefaultSnippetName());
             }
 
             snippet = new String(Files.readAllBytes(snippetPath), Charsets.UTF_8);

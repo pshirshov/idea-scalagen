@@ -33,7 +33,7 @@ public class InvokeScalagenAction extends AnAction {
         final SelectionModel selectionModel = editor.getSelectionModel();
         final VirtualFile file = e.getData(VIRTUAL_FILE);
         assert file != null;
-        final String bufferName = file.getNameWithoutExtension() + ".java";
+        final String bufferName = file.getNameWithoutExtension() + ".scala";
 
         Runnable runnable = new Runnable() {
             @Override
