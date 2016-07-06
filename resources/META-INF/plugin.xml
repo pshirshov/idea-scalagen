@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.github.feiwongreed</id>
   <name>Scalagen, Java to Scala converter</name>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <vendor email="pshirshov@gmail.com" url="https://github.com/pshirshov/idea-scalagen">pshirshov</vendor>
 
   <description><![CDATA[
@@ -9,7 +9,7 @@
       <ul>
         <li>Default shortcut is <em>Ctrl+K, Ctrl+G</em></li>
         <li>Supports quick opening of Scala scrathes (default shortcut is <em>Ctrl+K, Ctrl+S</em>)
-        and Java scratches (default shortcut is <em>Ctrl+K, Ctrl+S</em>)</li>
+        and Java scratches (default shortcut is <em>Ctrl+K, Ctrl+J</em>)</li>
       </ul>
     ]]></description>
 
