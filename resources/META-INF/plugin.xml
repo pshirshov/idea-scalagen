@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.github.feiwongreed</id>
   <name>Scalagen, Java to Scala converter</name>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
   <vendor email="pshirshov@gmail.com" url="https://github.com/pshirshov/idea-scalagen">pshirshov</vendor>
 
   <description><![CDATA[
@@ -19,6 +19,7 @@
 
   <change-notes><![CDATA[
       <ul>
+        <li><em>1.0.7</em>: Rebuilt for latest IDEA</li>
         <li><em>1.0.4</em>: Default shortcuts changed, converted code is always opened as a scratch, refactorings</li>
         <li><em>1.0.2</em>: Read-only files conversion support (Scala scratch used for converted code)</li>
       </ul>
