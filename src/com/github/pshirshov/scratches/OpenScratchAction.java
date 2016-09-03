@@ -6,6 +6,7 @@ import com.intellij.lang.Language;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.PathUtil;
 import kotlin.text.Charsets;
@@ -43,7 +44,13 @@ public abstract class OpenScratchAction extends AnAction {
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
         String snippet = getDefaultSnippet();
         final Language language = getLanguage();
-        final String bufferName = System.currentTimeMillis() + "." + language.getAssociatedFileType().getDefaultExtension();
+        LanguageFileType associatedFileType = language.getAssociatedFileType();
+        final String bufferName;
+        if (associatedFileType != null) {
+            bufferName = System.currentTimeMillis() + "." + associatedFileType.getDefaultExtension();
+        } else {
+            bufferName = System.currentTimeMillis() + ".unknown";
+        }
         ScratchUtils.doCreateNewScratch(project, bufferName, language, snippet);
     }
 
